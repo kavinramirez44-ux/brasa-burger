@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Brasa Burger - Hambúrguer artesanal feito na brasa."
+    >
+
+    <title>Brasa Burger | Hambúrguer Artesanal</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <a href="#inicio" class="logo">
+            🔥 BRASA<span>BURGER</span>
+        </a>
+
+        <nav class="nav">
+            <a href="#inicio">Início</a>
+            <a href="#cardapio">Cardápio</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <button
+            class="cart-button"
+            onclick="abrirCarrinho()"
+            aria-label="Abrir carrinho"
+        >
+            🛒
+            <span id="cart-count">0</span>
+        </button>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section id="inicio" class="hero">
+
+            <div class="hero-content">
+
+                <span class="badge">
+                    🔥 FEITO NA BRASA
+                </span>
+
+                <h1>
+                    O hambúrguer
+                    <span>que você merece.</span>
+                </h1>
+
+                <p>
+                    Carne artesanal, ingredientes selecionados
+                    e aquele sabor defumado que só a brasa
+                    consegue entregar.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#cardapio"
+                        class="primary-button"
+                    >
+                        Ver cardápio →
+                    </a>
+
+                    <a
+                        href="#sobre"
+                        class="secondary-button"
+                    >
+                        Conheça a Brasa
+                    </a>
+
+                </div>
+
+                <div class="hero-info">
+
+                    <div>
+                        <strong>4.9 ⭐</strong>
+                        <small>Avaliação</small>
+                    </div>
+
+                    <div>
+                        <strong>100%</strong>
+                        <small>Artesanal</small>
+                    </div>
+
+                    <div>
+                        <strong>25 min</strong>
+                        <small>Entrega média</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="glow"></div>
+
+                <div class="burger-circle">
+
+                    <img
+                        src="imagens/hero.png"
+                        alt="Hambúrguer artesanal"
+                    >
+
+                </div>
+
+                <div class="floating-card">
+
+                    <span>🔥</span>
+
+                    <div>
+                        <strong>Mais pedido</strong>
+                        <small>Brasa Bacon</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CARDÁPIO ================= -->
+
+        <section id="cardapio" class="menu">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        NOSSO CARDÁPIO
+                    </span>
+
+                    <h2>
+                        Escolha seu favorito.
+                    </h2>
+
+                </div>
+
+                <p>
+                    Hambúrgueres, acompanhamentos e bebidas
+                    preparados para deixar seu pedido completo.
+                </p>
+
+            </div>
+
+
+            <!-- CATEGORIAS -->
+
+            <div class="category-buttons">
+
+                <button
+                    class="category-button active"
+                    onclick="filtrarCategoria('todos', this)"
+                >
+                    🍔 Todos
+                </button>
+
+                <button
+                    class="category-button"
+                    onclick="filtrarCategoria('hamburguer', this)"
+                >
+                    🍔 Hambúrgueres
+                </button>
+
+                <button
+                    class="category-button"
+                    onclick="filtrarCategoria('acompanhamento', this)"
+                >
+                    🍟 Acompanhamentos
+                </button>
+
+                <button
+                    class="category-button"
+                    onclick="filtrarCategoria('bebida', this)"
+                >
+                    🥤 Bebidas
+                </button>
+
+            </div>
+
+
+            <!-- ================= PRODUTOS ================= -->
+
+            <div class="products" id="products">
+
+
+                <!-- BRASA CLÁSSICO -->
+
+                <article
+                    class="product"
+                    data-category="hamburguer"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="imagens/burger-classico.png"
+                            alt="Brasa Clássico"
+                        >
+
+                    </div>
+
+                    <div class="product-content">
+
+                        <span class="product-tag">
+                            CLÁSSICO
+                        </span>
+
+                        <h3>
+                            Brasa Clássico
+                        </h3>
+
+                        <p>
+                            Pão brioche, carne artesanal,
+                            queijo cheddar e molho especial.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                R$ 29,90
+                            </strong>
+
+                            <button
+                                onclick="adicionarCarrinho('Brasa Clássico', 29.90)"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BRASA BACON -->
+
+                <article
+                    class="product featured"
+                    data-category="hamburguer"
+                >
+
+                    <span class="popular">
+                        MAIS PEDIDO
+                    </span>
+
+                    <div class="product-image">
+
+                        <img
+                            src="imagens/burger-bacon.png"
+                            alt="Brasa Bacon"
+                        >
+
+                    </div>
+
+                    <div class="product-content">
+
+                        <span class="product-tag">
+                            ESPECIAL
+                        </span>
+
+                        <h3>
+                            Brasa Bacon
+                        </h3>
+
+                        <p>
+                            Carne artesanal, cheddar,
+                            bacon crocante e molho da casa.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                R$ 34,90
+                            </strong>
+
+                            <button
+                                onclick="adicionarCarrinho('Brasa Bacon', 34.90)"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BRASA DUPLO -->
+
+                <article
+                    class="product"
+                    data-category="hamburguer"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="imagens/burger-duplo.png"
+                            alt="Brasa Duplo"
+                        >
+
+                    </div>
+
+                    <div class="product-content">
+
+                        <span class="product-tag">
+                            DUPLO
+                        </span>
+
+                        <h3>
+                            Brasa Duplo
+                        </h3>
+
+                        <p>
+                            Dois hambúrgueres artesanais,
+                            cheddar duplo e molho especial.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                R$ 39,90
+                            </strong>
+
+                            <button
+                                onclick="adicionarCarrinho('Brasa Duplo', 39.90)"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BATATA -->
+
+                <article
+                    class="product"
+                    data-category="acompanhamento"
+                >
+
+                    <div class="product-image emoji-product">
+                        🍟
+                    </div>
+
+                    <div class="product-content">
+
+                        <span class="product-tag">
+                            ACOMPANHAMENTO
+                        </span>
+
+                        <h3>
+                            Batata da Brasa
+                        </h3>
+
+                        <p>
+                            Batata crocante temperada
+                            com nosso molho especial.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                R$ 14,90
+                            </strong>
+
+                            <button
+                                onclick="adicionarCarrinho('Batata da Brasa', 14.90)"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BATATA BACON -->
+
+                <article
+                    class="product"
+                    data-category="acompanhamento"
+                >
+
+                    <div class="product-image emoji-product">
+                        🥓
+                    </div>
+
+                    <div class="product-content">
+
+                        <span class="product-tag">
+                            ESPECIAL
+                        </span>
+
+                        <h3>
+                            Batata Bacon
+                        </h3>
+
+                        <p>
+                            Batata crocante, cheddar cremoso
+                            e bacon crocante.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                R$ 19,90
+                            </strong>
+
+                            <button
+                                onclick="adicionarCarrinho('Batata Bacon', 19.90)"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- COCA-COLA -->
+
+                <article
+                    class="product"
+                    data-category="bebida"
+                >
+
+                    <div class="product-image emoji-product">
+                        🥤
+                    </div>
+
+                    <div class="product-content">
+
+                        <span class="product-tag">
+                            BEBIDA
+                        </span>
+
+                        <h3>
+                            Coca-Cola Lata
+                        </h3>
+
+                        <p>
+                            Coca-Cola lata 350ml,
+                            bem gelada.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                R$ 6,00
+                            </strong>
+
+                            <button
+                                onclick="adicionarCarrinho('Coca-Cola Lata', 6.00)"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- GUARANÁ -->
+
+                <article
+                    class="product"
+                    data-category="bebida"
+                >
+
+                    <div class="product-image emoji-product">
+                        🥤
+                    </div>
+
+                    <div class="product-content">
+
+                        <span class="product-tag">
+                            BEBIDA
+                        </span>
+
+                        <h3>
+                            Guaraná Lata
+                        </h3>
+
+                        <p>
+                            Guaraná lata 350ml,
+                            perfeito para acompanhar.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                R$ 6,00
+                            </strong>
+
+                            <button
+                                onclick="adicionarCarrinho('Guaraná Lata', 6.00)"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ÁGUA -->
+
+                <article
+                    class="product"
+                    data-category="bebida"
+                >
+
+                    <div class="product-image emoji-product">
+                        💧
+                    </div>
+
+                    <div class="product-content">
+
+                        <span class="product-tag">
+                            BEBIDA
+                        </span>
+
+                        <h3>
+                            Água Mineral
+                        </h3>
+
+                        <p>
+                            Água mineral sem gás,
+                            500ml.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                R$ 4,00
+                            </strong>
+
+                            <button
+                                onclick="adicionarCarrinho('Água Mineral', 4.00)"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SOBRE ================= -->
+
+        <section id="sobre" class="about">
+
+            <div class="about-visual">
+
+                <img
+                    src="imagens/sobre.png"
+                    alt="Brasa Burger"
+                >
+
+            </div>
+
+            <div class="about-content">
+
+                <span class="section-label">
+                    NOSSA HISTÓRIA
+                </span>
+
+                <h2>
+                    Mais que um hambúrguer.
+                    <span>Uma experiência.</span>
+                </h2>
+
+                <p>
+                    A Brasa Burger nasceu da vontade
+                    de transformar um simples hambúrguer
+                    em uma experiência de sabor.
+                </p>
+
+                <p>
+                    Nossa carne é preparada artesanalmente
+                    e finalizada na brasa para entregar
+                    aquele sabor defumado que faz você
+                    querer voltar.
+                </p>
+
+                <a
+                    href="#cardapio"
+                    class="primary-button"
+                >
+                    Ver cardápio →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= AVALIAÇÕES ================= -->
+
+        <section class="reviews">
+
+            <div class="section-header reviews-header">
+
+                <div>
+
+                    <span class="section-label">
+                        O QUE NOSSOS CLIENTES DIZEM
+                    </span>
+
+                    <h2>
+                        Quem prova, aprova.
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="reviews-grid">
+
+                <article class="review-card">
+
+                    <div class="stars">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <p>
+                        "Hambúrguer muito bom! A carne
+                        na brasa faz toda a diferença."
+                    </p>
+
+                    <strong>
+                        Lucas M.
+                    </strong>
+
+                </article>
+
+
+                <article class="review-card">
+
+                    <div class="stars">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <p>
+                        "O Brasa Bacon virou meu favorito.
+                        Chegou rápido e muito bem feito."
+                    </p>
+
+                    <strong>
+                        Mariana S.
+                    </strong>
+
+                </article>
+
+
+                <article class="review-card">
+
+                    <div class="stars">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <p>
+                        "Batata crocante, hambúrguer
+                        excelente e atendimento ótimo."
+                    </p>
+
+                    <strong>
+                        Rafael P.
+                    </strong>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INFORMAÇÕES ================= -->
+
+        <section class="business-info">
+
+            <div class="info-card">
+
+                <span>📍</span>
+
+                <div>
+
+                    <h3>
+                        Onde estamos
+                    </h3>
+
+                    <p>
+                        Mathias velho,rua passo fundo n°321<br>
+                        Canoas - RS
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span>🕐</span>
+
+                <div>
+
+                    <h3>
+                        Horário
+                    </h3>
+
+                    <p>
+                        Terça a Domingo<br>
+                        15:00 às 23:30
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span>📱</span>
+
+                <div>
+
+                    <h3>
+                        Pedidos
+                    </h3>
+
+                    <p>
+                        Faça seu pedido pelo
+                        WhatsApp.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section id="contato" class="cta">
+
+            <span>
+                🔥 DEU FOME?
+            </span>
+
+            <h2>
+                Seu próximo hambúrguer
+                está aqui.
+            </h2>
+
+            <p>
+                Monte seu pedido e finalize pelo WhatsApp.
+            </p>
+
+            <button
+                class="cta-button"
+                onclick="abrirCarrinho()"
+            >
+                Abrir meu pedido →
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= WHATSAPP FLUTUANTE ================= -->
+
+    <a
+        href="https://wa.me/5551999999999"
+        target="_blank"
+        class="whatsapp-button"
+        aria-label="Falar no WhatsApp"
+    >
+        💬
+    </a>
+
+
+    <!-- ================= NOTIFICAÇÃO ================= -->
+
+    <div
+        id="notification"
+        class="notification"
+    >
+        <span>✓</span>
+
+        <div>
+            <strong>
+                Adicionado!
+            </strong>
+
+            <small id="notification-text">
+                Produto adicionado ao carrinho.
+            </small>
+        </div>
+
+    </div>
+
+
+    <!-- ================= OVERLAY ================= -->
+
+    <div
+        id="cart-overlay"
+        class="cart-overlay"
+        onclick="fecharCarrinho()"
+    ></div>
+
+
+    <!-- ================= CARRINHO ================= -->
+
+    <aside
+        id="cart"
+        class="cart"
+    >
+
+        <div class="cart-header">
+
+            <div>
+
+                <span class="section-label">
+                    SEU PEDIDO
+                </span>
+
+                <h2>
+                    Carrinho
+                </h2>
+
+            </div>
+
+            <button
+                class="close-cart"
+                onclick="fecharCarrinho()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- ITENS -->
+
+        <div
+            id="cart-items"
+            class="cart-items"
+        >
+
+            <div class="empty-cart">
+
+                <span>
+                    🛒
+                </span>
+
+                <h3>
+                    Seu carrinho está vazio
+                </h3>
+
+                <p>
+                    Adicione produtos para começar.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= FORMULÁRIO ================= -->
+
+        <div class="customer-form">
+
+            <h3>
+                Dados do pedido
+            </h3>
+
+
+            <input
+                type="text"
+                id="customer-name"
+                placeholder="Seu nome"
+                autocomplete="name"
+            >
+
+
+            <!-- TIPO DO PEDIDO -->
+
+            <div class="delivery-options">
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="order-type"
+                        value="entrega"
+                        checked
+                        onchange="alterarTipoPedido()"
+                    >
+
+                    <span>
+                        🛵 Entrega
+                    </span>
+
+                </label>
+
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="order-type"
+                        value="retirada"
+                        onchange="alterarTipoPedido()"
+                    >
+
+                    <span>
+                        🏠 Retirada
+                    </span>
+
+                </label>
+
+            </div>
+
+
+            <!-- ENDEREÇO -->
+
+            <input
+                type="text"
+                id="customer-address"
+                placeholder="Endereço de entrega"
+                autocomplete="street-address"
+            >
+
+
+            <!-- OBSERVAÇÃO -->
+
+            <textarea
+                id="order-notes"
+                placeholder="Observações: sem cebola, extra bacon..."
+                rows="3"
+            ></textarea>
+
+
+            <!-- PAGAMENTO -->
+
+            <select id="payment-method">
+
+                <option value="">
+                    Forma de pagamento
+                </option>
+
+                <option value="Pix">
+                    Pix
+                </option>
+
+                <option value="Cartão">
+                    Cartão
+                </option>
+
+                <option value="Dinheiro">
+                    Dinheiro
+                </option>
+
+            </select>
+
+
+            <!-- TROCO -->
+
+            <input
+                type="number"
+                id="change-for"
+                placeholder="Troco para quanto? (opcional)"
+                min="0"
+                step="0.01"
+            >
+
+        </div>
+
+
+        <!-- ================= TOTAL ================= -->
+
+        <div class="cart-footer">
+
+            <div class="summary-line">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong id="cart-subtotal">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+
+            <div class="summary-line">
+
+                <span>
+                    Entrega
+                </span>
+
+                <strong id="delivery-fee">
+                    R$ 5,00
+                </strong>
+
+            </div>
+
+
+            <div class="cart-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="cart-total">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+
+            <button
+                class="checkout-button"
+                onclick="finalizarPedido()"
+            >
+                📱 Finalizar pelo WhatsApp
+            </button>
+
+
+            <button
+                class="clear-cart"
+                onclick="limparCarrinho()"
+            >
+                Limpar carrinho
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🔥 BRASA<span>BURGER</span>
+        </div>
+
+        <p>
+            © 2026 Brasa Burger.
+            Todos os direitos reservados.
+        </p>
+
+        <p>
+            Feito na brasa. Feito para você.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
